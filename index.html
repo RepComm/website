@@ -10,6 +10,13 @@
             overflow-x:hidden;
             color:white;
         }
+        * {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
         #dBackgroundImage {
             position:fixed;
             top:0px;
@@ -19,6 +26,7 @@
             background-image:url("res/images/grid.svg");
             background-repeat:repeat;
             background-position-y:top;
+            cursor:all-scroll;
         }
         #dContainer {
             position:absolute;
@@ -37,7 +45,7 @@
             text-align:center;
         }
         #sTitle {
-            color: #3f565c;
+            color: #61969f;
             transform: translate(-50%, -50%);
             position: absolute;
             top: 50%;
@@ -123,12 +131,23 @@
             background-image: url("res/images/rulers_h.svg");
             background-repeat: repeat-x;
         }
+        #context_ring {
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+        #robot_sticker {
+            position:absolute;
+            top:5vh;
+            left:2%;
+        }
     </style>
 </head>
 
 <body>
     <div id="dContainer">
         <div id="dBackgroundImage"></div>
+        <img id="robot_sticker" src="res/images/robot.svg" />
         <div id="dRulerV"></div>
         <div id="dHeader">
             <span id="sTitle">Crowder</span>
@@ -144,7 +163,10 @@
         <div id="dContent">
             <img id="tooltip_content" src="res/images/tooltip_content.png" />
         </div>
+
+        <img id="context_ring" src="res/images/context_ring.svg" />
     </div>
+    <script src="res/scripts/showdown/showdown.js"></script>
     <script src="res/scripts/index.js"></script>
 </body>
 
