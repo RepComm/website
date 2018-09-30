@@ -66,13 +66,15 @@
             width: 80%;
             height: 100vh;
             background-color: rgb(41, 53, 56);
+            display:inline;
+            overflow-y:hidden;
         }
         #tooltip_menu {
             position:absolute;
             bottom:-32px;
             left:-64px;
         }
-        .top_menu {
+        #top_menu {
             position:absolute;
             bottom:0px;
             left:0px;
@@ -83,15 +85,15 @@
             transition:all 0.2s;
             overflow:hidden;
         }
-        .top_menu:hover {
+        #top_menu:hover {
             height:28%;
         }
-        .top_menu:hover .top_menu_button {
+        #top_menu:hover .top_menu_button {
             margin-top:0%;
         }
         .top_menu_button {
             top:0px;
-            margin-top:50%;
+            margin-top:2em;
             margin-left:1px;
             margin-right:1px;
             background-color:transparent;
@@ -141,6 +143,13 @@
             top:5vh;
             left:2%;
         }
+        .content_page {
+            float:left;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow:hidden;
+        }
     </style>
 </head>
 
@@ -152,20 +161,21 @@
         <div id="dHeader">
             <span id="sTitle">Crowder</span>
             <img id="tooltip_menu" src="res/images/tooltip_menu.png" />
-            <div class="top_menu">
+            <div id="top_menu">
+                <!--
                 <span class="top_menu_button">Live</span>
                 <span class="top_menu_button">Projects</span>
                 <span class="top_menu_button">Code</span>
                 <span class="top_menu_button">Links</span>
+                -->
             </div>
         </div>
         <div id="dRulerH"></div>
         <div id="dContent">
             <img id="tooltip_content" src="res/images/tooltip_content.png" />
         </div>
-
-        <img id="context_ring" src="res/images/context_ring.svg" />
     </div>
+    <img id="context_ring" src="res/images/context_ring.svg" />
     <script src="res/scripts/showdown/showdown.js"></script>
     <script src="res/scripts/index.js"></script>
 </body>

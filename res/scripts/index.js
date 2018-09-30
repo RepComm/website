@@ -4,6 +4,8 @@ let content = document.getElementById("dContent");
 let rulerV = document.getElementById("dRulerV");
 let rulerH = document.getElementById("dRulerH");
 
+let topMenu = document.getElementById("top_menu");
+
 let bg = document.getElementById("dBackgroundImage");
 let isDraggingScroll = false;
 let draggingScrollLastY = 0;
@@ -54,9 +56,20 @@ fetch(url).then((response)=>{
                 let page = json.pages[i];
                 let html = converter.makeHtml(page.content);
                 let div = document.createElement("div");
-                div.style["margin-left"] = "25px";
+                //div.style["margin-left"] = "25px";
                 div.innerHTML = html;
+                div.className = "content_page";
                 content.appendChild(div);
+
+                if (page.name && page.name !== "") {
+                    let menuItem = document.createElement("span");
+                    menuItem.textContent = page.name;
+                    menuItem.className = "top_menu_button";
+                    menuItem.addEventListener("click", (evt)=>{
+                        div.scrollIntoView();
+                    });
+                    topMenu.appendChild(menuItem);
+                }
             }
         }
     });
