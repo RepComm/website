@@ -45,7 +45,7 @@ document.addEventListener("mouseup", (evt)=>{
 showdown.setFlavor("github");
 let converter = new showdown.Converter();
 
-let url = "http://www.jonathancrowder.com/res/php/content.php";
+let url = "https://www.jonathancrowder.com/res/php/content.php";
 
 fetch(url).then((response)=>{
     response.json().then((json)=>{
