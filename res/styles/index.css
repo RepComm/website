@@ -1,0 +1,144 @@
+body {
+    background-color:rgb(17, 17, 17);
+    overflow-x:hidden;
+    color:white;
+}
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#dBackgroundImage {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background-image:url("../images/grid.svg");
+    background-repeat:repeat;
+    background-position-y:top;
+    cursor:all-scroll;
+}
+#dContainer {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:auto;
+}
+#dHeader {
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    width: 80%;
+    height: 25vh;
+    background-color: #293538;
+    text-align:center;
+}
+#sTitle {
+    color: #61969f;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2.4em;
+    font-family: Arial;
+    letter-spacing: 0.5em;
+}
+#tooltip_content {
+    position:absolute;
+    top:50vh;
+    left:22px;
+}
+#dContent {
+    position: absolute;
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+    background-color: rgb(41, 53, 56);
+    overflow-x:hidden;
+    display:flex;
+}
+#tooltip_menu {
+    position:absolute;
+    bottom:-32px;
+    left:-64px;
+}
+#top_menu {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:25%;
+    text-align:center;
+    background-color: #61969f;
+    transition:all 0.2s;
+    overflow:hidden;
+}
+#top_menu:hover {
+    height:28%;
+}
+#top_menu:hover .top_menu_button {
+    
+}
+.top_menu_button {
+    top:0px;
+    margin-left:1px;
+    margin-right:1px;
+    background-color:transparent;
+    height:100%;
+    width:auto;
+    padding-left:15px;
+    padding-right:15px;
+    display: inline-block;
+    font-size:1.4em;
+    font-family:'Courier New', Courier, monospace;
+    transition:all 0.2s;
+    cursor: pointer;
+    color:#293538;
+}
+.top_menu_button:hover {
+    background-color:#77bbc7;
+}
+.top_menu_button:active {
+    color:#77bbc7;
+    background-color:#293538;
+}
+#dRulerV {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 15px;
+    background-image: url("../images/rulers_v.svg");
+    background-repeat: repeat-y;
+}
+#dRulerH {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 15px;
+    background-image: url("../images/rulers_h.svg");
+    background-repeat: repeat-x;
+}
+#context_ring {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#robot_sticker {
+    position:absolute;
+    top:5vh;
+    left:2%;
+}
+.content_page {
+    width:100%;
+    height:auto;
+    top:0px;
+    float:left;
+    display:block;
+    flex:1;
+}

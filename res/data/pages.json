@@ -1,0 +1,16 @@
+{
+    "pages":[
+        {
+            "name":"About",
+            "contenturl":"res/data/resume.md"
+        },
+        {
+            "content":"Content placeholder while testing",
+            "name":"Projects"
+        },
+        {
+            "name":"Links",
+            "contenturl":"res/data/links.md"
+        }
+    ]
+}

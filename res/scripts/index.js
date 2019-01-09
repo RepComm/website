@@ -47,28 +47,53 @@ document.addEventListener("mouseup", (evt)=>{
 showdown.setFlavor("github");
 let converter = new showdown.Converter();
 
-let url = "https://www.jonathancrowder.com/res/php/content.php";
+//let url = "https://www.jonathancrowder.com/res/data/pages.json";
+let url = "res/data/pages.json";
 
 fetch(url).then((response)=>{
     response.json().then((json)=>{
         if (json.pages && json.pages.length > 0) {
             for (let i=0; i<json.pages.length; i++) {
                 let page = json.pages[i];
-                let html = converter.makeHtml(page.content);
-                let div = document.createElement("div");
-                //div.style["margin-left"] = "25px";
-                div.innerHTML = html;
-                div.className = "content_page";
-                content.appendChild(div);
+                let html;
+                if (page.content) {
+                    html = converter.makeHtml(page.content);
+                    let div = document.createElement("div");
+                    div.innerHTML = html;
+                    div.className = "content_page";
+                    content.appendChild(div);
 
-                if (page.name && page.name !== "") {
-                    let menuItem = document.createElement("span");
-                    menuItem.textContent = page.name;
-                    menuItem.className = "top_menu_button";
-                    menuItem.addEventListener("click", (evt)=>{
-                        div.scrollIntoView();
+                    if (page.name && page.name !== "") {
+                        let menuItem = document.createElement("span");
+                        menuItem.textContent = page.name;
+                        menuItem.className = "top_menu_button";
+                        menuItem.addEventListener("click", (evt)=>{
+                            div.scrollIntoView();
+                        });
+                        topMenu.appendChild(menuItem);
+                    }
+                } else if (page.contenturl) {
+                    fetch(page.contenturl).then((response0)=>{
+                        response0.text().then((text)=>{
+                            html = converter.makeHtml(text);
+
+                            let div = document.createElement("div");
+                            div.innerHTML = html;
+                            div.className = "content_page";
+                            content.appendChild(div);
+
+                            if (page.name && page.name !== "") {
+                                let menuItem = document.createElement("span");
+                                menuItem.textContent = page.name;
+                                menuItem.className = "top_menu_button";
+                                menuItem.addEventListener("click", (evt)=>{
+                                    div.scrollIntoView();
+                                });
+                                topMenu.appendChild(menuItem);
+                            }
+                            return;
+                        });
                     });
-                    topMenu.appendChild(menuItem);
                 }
             }
         }
