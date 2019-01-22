@@ -56,11 +56,13 @@ fetch(url).then((response)=>{
             for (let i=0; i<json.pages.length; i++) {
                 let page = json.pages[i];
                 let html;
+                let r = content.getBoundingClientRect();
                 if (page.content) {
                     html = converter.makeHtml(page.content);
                     let div = document.createElement("div");
                     div.innerHTML = html;
                     div.className = "content_page";
+                    div.style.left = r.width * i + "px";
                     content.appendChild(div);
 
                     if (page.name && page.name !== "") {
@@ -80,6 +82,7 @@ fetch(url).then((response)=>{
                             let div = document.createElement("div");
                             div.innerHTML = html;
                             div.className = "content_page";
+                            div.style.left = r.width * i + "px";
                             content.appendChild(div);
 
                             if (page.name && page.name !== "") {
