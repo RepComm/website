@@ -1,19 +1,21 @@
 
-let content = document.getElementById("dContent");
 
-let rulerV = document.getElementById("dRulerV");
-let rulerH = document.getElementById("dRulerH");
 
-let topMenu = document.getElementById("top_menu");
+let content = get("dContent");
 
-let bg = document.getElementById("dBackgroundImage");
+let rulerV = get("dRulerV");
+let rulerH = get("dRulerH");
+
+let topMenu = get("top_menu");
+
+let bg = get("dBackgroundImage");
 let isDraggingScroll = false;
 let draggingScrollLastY = 0;
 
-let contextR = document.getElementById("context_ring");
+let contextR = get("context_ring");
 contextR.style.visibility = "hidden";
 
-document.addEventListener("mousemove", (evt)=>{
+on(document, "mousemove", (evt)=>{
     rulerV.style.backgroundPositionY = evt.clientY + "px";
     rulerH.style.backgroundPositionX = evt.clientX + "px";
     contextR.style.visibility = "hidden";
@@ -25,7 +27,7 @@ document.addEventListener("mousemove", (evt)=>{
     draggingScrollLastY = evt.clientY;
 });
 
-document.addEventListener("contextmenu", (evt)=>{
+on(document, "contextmenu", (evt)=>{
     evt.preventDefault();
     let b = contextR.getBoundingClientRect();
     contextR.style.left = evt.clientX - b.width/2 + "px";
@@ -33,21 +35,29 @@ document.addEventListener("contextmenu", (evt)=>{
     contextR.style.visibility = "visible";
 });
 
-bg.addEventListener("mousedown", (evt)=>{
+on(bg, "mousedown", (evt)=>{
     if (evt.button === 1) {
         evt.preventDefault();
     }
     isDraggingScroll = true;
 });
 
-document.addEventListener("mouseup", (evt)=>{
+on(document, "mouseup", (evt)=>{
     isDraggingScroll = false;
+});
+
+on(document, "click", (evt)=>{
+    //Open links in a new tab by default
+    if (evt.target.nodeName === "A" || evt.target.parentNode.nodeName === "A") {
+        evt.preventDefault();
+        window.open( (evt.target.href||evt.target.parentNode.href), '_blank');
+    }
 });
 
 showdown.setFlavor("github");
 let converter = new showdown.Converter();
 
-window.addEventListener("resize", (evt)=>{
+on(window, "resize", (evt)=>{
     let r = content.getBoundingClientRect();
     let pgs = document.getElementsByClassName("content_page");
     for (let i=0; i<pgs.length; i++) {
