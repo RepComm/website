@@ -1,5 +1,6 @@
 //Get an element by its ID, alias
 let get = (id) => document.getElementById(id);
+let getByClass = (classname) => document.getElementsByClassName(classname);
 //Get bounding rectangle, alias
 let rect = (e) => e.getBoundingClientRect();
 //Create an element, alias

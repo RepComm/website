@@ -29,7 +29,7 @@ on(document, "mousemove", (evt)=>{
 
 on(document, "contextmenu", (evt)=>{
     evt.preventDefault();
-    let b = contextR.getBoundingClientRect();
+    let b = rect(contextR);
     contextR.style.left = evt.clientX - b.width/2 + "px";
     contextR.style.top = evt.clientY - b.height/2 + "px";
     contextR.style.visibility = "visible";
@@ -58,8 +58,8 @@ showdown.setFlavor("github");
 let converter = new showdown.Converter();
 
 on(window, "resize", (evt)=>{
-    let r = content.getBoundingClientRect();
-    let pgs = document.getElementsByClassName("content_page");
+    let r = rect(content);
+    let pgs = getByClass("content_page");
     for (let i=0; i<pgs.length; i++) {
         pgs[i].style.left = r.width * i + "px";
     }
@@ -74,20 +74,20 @@ fetch(url).then((response)=>{
             for (let i=0; i<json.pages.length; i++) {
                 let page = json.pages[i];
                 let html;
-                let r = content.getBoundingClientRect();
+                let r = rect(content);
                 if (page.content) {
                     html = converter.makeHtml(page.content);
-                    let div = document.createElement("div");
+                    let div = make("div");
                     div.innerHTML = html;
                     div.className = "content_page";
                     div.style.left = r.width * i + "px";
                     content.appendChild(div);
 
                     if (page.name && page.name !== "") {
-                        let menuItem = document.createElement("span");
+                        let menuItem = make("span");
                         menuItem.textContent = page.name;
                         menuItem.className = "top_menu_button";
-                        menuItem.addEventListener("click", (evt)=>{
+                        on(menuItem, "click", (evt)=>{
                             div.scrollIntoView();
                         });
                         topMenu.appendChild(menuItem);
@@ -97,17 +97,17 @@ fetch(url).then((response)=>{
                         response0.text().then((text)=>{
                             html = converter.makeHtml(text);
 
-                            let div = document.createElement("div");
+                            let div = make("div");
                             div.innerHTML = html;
                             div.className = "content_page";
                             div.style.left = r.width * i + "px";
                             content.appendChild(div);
 
                             if (page.name && page.name !== "") {
-                                let menuItem = document.createElement("span");
+                                let menuItem = make("span");
                                 menuItem.textContent = page.name;
                                 menuItem.className = "top_menu_button";
-                                menuItem.addEventListener("click", (evt)=>{
+                                on(menuItem, "click", (evt)=>{
                                     div.scrollIntoView();
                                 });
                                 topMenu.appendChild(menuItem);
