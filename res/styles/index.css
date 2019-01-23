@@ -1,7 +1,7 @@
 body {
     background-color:rgb(17, 17, 17);
     overflow-x:hidden;
-    color:white;
+    color:#c68ce4;
 }
 * {
     -webkit-user-select: none;
@@ -143,4 +143,18 @@ body {
     left:0px;
     float:left;
     display:block;
+    font-family:'Courier New', Courier, monospace;
+}
+
+a {
+    text-decoration:none;
+    color:#ea87f9;
+    background-color:#212223;
+    border-radius: 0.5em;
+    padding: 2px;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-left:20px;
+    color:#7cc4c9;
 }

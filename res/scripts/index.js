@@ -47,6 +47,14 @@ document.addEventListener("mouseup", (evt)=>{
 showdown.setFlavor("github");
 let converter = new showdown.Converter();
 
+window.addEventListener("resize", (evt)=>{
+    let r = content.getBoundingClientRect();
+    let pgs = document.getElementsByClassName("content_page");
+    for (let i=0; i<pgs.length; i++) {
+        pgs[i].style.left = r.width * i + "px";
+    }
+});
+
 //let url = "https://www.jonathancrowder.com/res/data/pages.json";
 let url = "res/data/pages.json";
 
