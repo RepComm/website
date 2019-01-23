@@ -50,7 +50,7 @@ body {
 #tooltip_content {
     position:absolute;
     top:50vh;
-    left:22px;
+    right:90%;
 }
 #dContent {
     position: absolute;
@@ -157,4 +157,10 @@ a {
 h1, h2, h3, h4, h5 {
     margin-left:20px;
     color:#7cc4c9;
+}
+#github {
+    height: 50%;
+    right: 2%;
+    position: absolute;
+    top: 10%;
 }

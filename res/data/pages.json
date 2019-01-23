@@ -1,15 +1,19 @@
 {
     "pages":[
         {
-            "name":"About",
+            "name":"about",
+            "contenturl":"res/data/about.md"
+        },
+        {
+            "name":"resume",
             "contenturl":"res/data/resume.md"
         },
         {
-            "content":"Content placeholder while testing",
-            "name":"Projects"
+            "contenturl":"res/data/projects.md",
+            "name":"projects"
         },
         {
-            "name":"Links",
+            "name":"links",
             "contenturl":"res/data/links.md"
         }
     ]
