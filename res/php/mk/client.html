@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <style>
+        body {
+            background-color: #212121;
+        }
+        #fetch {
+            width:100%;
+            border-radius: 1em;
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+            border: none;
+            background-color: #6c0e6b;
+            color: #efa7f3;
+            font-size: 2em;
+        }
+        .event_container {
+            text-align: center;
+            background-color: #444;
+            color: #bff;
+            border-radius: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow:hidden;
+            margin-top:1em;
+            margin-bottom:1em;
+            transition:all 1s;
+        }
+        .event_container:hover {
+            border-radius:0.25em;
+        }
+        .event_container:hover > * {
+            background-color:transparent;
+        }
+        .event_container > * {
+            display:block;
+            cursor:pointer;
+            transition:all 1s;
+        }
+        .event_title {
+            font-size: 1.5em;
+            background-color: #333;
+        }
+        .event_type {
+
+        }
+        .event_date {
+
+        }
+        .event_image {
+            width:80%;
+            margin-left:10%;
+        }
+        .event_desc {
+            background-color: #535353;
+            padding-bottom: 1em;
+            padding-top:1em;
+        }
+        </style>
+</head>
+
+<body>
+    <button id="fetch">Fetch</button>
+
+    <div id="events_display">
+
+    </div>
+
+    <script src="api.js"></script>
+    <script type="text/javascript">
+        let elem = (id) => document.getElementById(id);
+        let append = (to, stuff) => {
+            if (stuff.length > 0) {
+                for (let i = 0; i < stuff.length; i++) {
+                    to.appendChild(stuff[i]);
+                }
+            }
+        }
+        let make = (type) => document.createElement(type);
+        let setClass = (e, str) => e.className = str;
+
+        let btnFetch = elem("fetch");
+        let divEvents = elem("events_display");
+
+        function makeEventDisplay(jsonData) {
+            //Container
+            let divEvent = make("div");
+            setClass(divEvent, "event_container");
+            divEvent.id = jsonData.uid;
+            //Title
+            let sTitle = make("label");
+            setClass(sTitle, "event_title");
+            sTitle.textContent = jsonData.title;
+
+            //Type
+            let sType = make("label");
+            setClass(sType, "event_type");
+            sType.textContent = jsonData.type;
+
+            //Begin/End Dates
+            let d = new Date(jsonData.timebegin);
+            let sBegin = make("label");
+            setClass(sBegin, "event_date");
+            sBegin.textContent = d.toDateString() + " at " + d.toLocaleTimeString();
+            d = new Date(jsonData.timeend);
+            let sEnd = make("label");
+            setClass(sEnd, "event_date");
+            sEnd.textContent = d.toLocaleTimeString();
+
+            //Image
+            let iImage = make("img");
+            iImage.src = jsonData.imageurl;
+            setClass(iImage, "event_image");
+
+            //Description
+            let sDesc = make("span");
+            setClass(sDesc, "event_desc");
+
+            sDesc.innerHTML = jsonData.description.replace(/%3Cbr%3E/g, "<br />");
+            append(divEvent, [sTitle, sType, sBegin, sEnd, iImage, sDesc]);
+            return divEvent;
+        }
+
+        function clearElementChildren(e) {
+            while (e.firstChild) {
+                e.removeChild(e.firstChild);
+            }
+        }
+
+        btnFetch.addEventListener("click", () => {
+            clearElementChildren(divEvents);
+            
+            MKEventsAPI.fetch({
+                offset: 0,
+                limit: 2
+            }, (json) => {
+                console.log(json);
+                if (json.status === "success") {
+                    for (let i = 0; i < json.events.length; i++) {
+                        let currentEvent = makeEventDisplay(json.events[i]);
+                        divEvents.appendChild(currentEvent);
+                    }
+                } else if (json.status === "empty") {
+                    let emptyMsg = document.createElement("span");
+                    emptyMsg.textContent = "Events list for current end date is empty";
+                    divEvents.appendChild(emptyMsg);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

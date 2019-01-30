@@ -164,3 +164,8 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     top: 10%;
 }
+.gitembed {
+    border:none;
+    width:90%;
+    margin-left:5%;
+}
