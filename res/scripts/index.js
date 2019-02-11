@@ -1,6 +1,4 @@
 
-
-
 let content = get("dContent");
 
 let rulerV = get("dRulerV");
@@ -46,6 +44,20 @@ on(document, "mouseup", (evt)=>{
     isDraggingScroll = false;
 });
 
+on(content, "mouseup", (evt)=>{
+    let r = rect(content); //Get content element bounds
+    //Get the content page percentage we're in, round it to nearest
+    let mul = Math.round(
+        content.scrollLeft / r.width
+    );
+    //Tell content to smooth scroll to nearest page offset
+    content.scrollBy({
+        top:0,
+        left:-(content.scrollLeft - (mul * r.width)),
+        behavior:"smooth"
+    });
+});
+
 on(document, "click", (evt)=>{
     //Open links in a new tab by default
     if (evt.target.nodeName === "A" || evt.target.parentNode.nodeName === "A") {
@@ -88,7 +100,9 @@ fetch(url).then((response)=>{
                         menuItem.textContent = page.name;
                         menuItem.className = "top_menu_button";
                         on(menuItem, "click", (evt)=>{
-                            div.scrollIntoView();
+                            div.scrollIntoView({
+                                behavior:"smooth"
+                            });
                         });
                         topMenu.appendChild(menuItem);
                     }
@@ -108,7 +122,9 @@ fetch(url).then((response)=>{
                                 menuItem.textContent = page.name;
                                 menuItem.className = "top_menu_button";
                                 on(menuItem, "click", (evt)=>{
-                                    div.scrollIntoView();
+                                    div.scrollIntoView({
+                                        behavior:"smooth"
+                                    });
                                 });
                                 topMenu.appendChild(menuItem);
                             }
