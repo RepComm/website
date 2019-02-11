@@ -44,7 +44,7 @@ on(document, "mouseup", (evt)=>{
     isDraggingScroll = false;
 });
 
-on(content, "mouseup", (evt)=>{
+let contentPointerUpHandler = (evt)=>{
     let r = rect(content); //Get content element bounds
     //Get the content page percentage we're in, round it to nearest
     let mul = Math.round(
@@ -56,7 +56,10 @@ on(content, "mouseup", (evt)=>{
         left:-(content.scrollLeft - (mul * r.width)),
         behavior:"smooth"
     });
-});
+}
+
+on(content, "touchend", contentPointerUpHandler);
+on(content, "mouseup", contentPointerUpHandler);
 
 on(document, "click", (evt)=>{
     //Open links in a new tab by default
