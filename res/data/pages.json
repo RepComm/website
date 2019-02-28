@@ -9,12 +9,12 @@
             "contenturl":"res/data/resume.md"
         },
         {
-            "name":"links",
-            "contenturl":"res/data/links.md"
-        },
-        {
             "name":"portfolio",
             "contenturl":"res/data/portfolio.md"
+        },
+        {
+            "name":"links",
+            "contenturl":"res/data/links.md"
         }
     ]
 }

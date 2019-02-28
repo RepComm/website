@@ -9,43 +9,31 @@
 - Web and app design
 - Configure and install linux/win OSes
 - Debug and repair computer hardware
--
 
-### Computer Languages
+### Syntax / Languages / Formats
 > * JavaScript,
 > * Java,
 > * PHP,
 > * C#,
 > * CSS,
 > * HTML, XML, 
+> * C/++
 > * Json,
 > * Autoit
 > * python
-> * Cpp
-> * C
 > * SQL
 
 ### Volunteer work
-> * Driver for a church after school program
-> * Sunday school worker/teacher
-> * Neighborhood canvasing
->* Choir
-> * Instrumentalist w/ piano and guitar
-> * Brazil Missions Trip;
-> fixed plumbing,
-> cleaned facilities,
-> painted trailers,
-> repaired mowing equipment,
-> rebuilt a sound system,
-> played piano/guitar,
-> debug/repair of several facility computers,
-> made web based clock for services,
-> installed several projectors/climb into roofs to install cables, 
-> replaced electrical outlets/switches/adapters,
-> pressure washed sidewalks,
-> installed security cameras/system,
-> fixed/setup internet routers, hooked up VoIP phone
-> and mowed all of the facilities' grass
+> * Driver/education assistant for an after school program
+> * Guitar/Piano/Vocal accompaniment for several years
+> * Technical intern / maintainence in Brazil for a relgious institution:
+> * * plumbing, janitorial, lots of electrical repair and heavy machine maintainence,
+> * * rebuilt a sound system given components that weren't configured correctly at all,
+> * * lots of laptop repair/debugging, ios configuration debugging,
+> * * made clock web app for projector displays,
+> * * designed layout and built everything up for HDMI projector displays,
+> * * installed and configured securety system/cameras,
+> * * configured and repaired internet routers, hooked up VoIP phones
 
 ## Personal Values
 > * Waste not, but don't overdo it.
@@ -55,19 +43,13 @@
 > * Don't isolate old use/users; planning for backward compat is beautiful, and should be done more.
 > * Love what you do and it will love you back.
 > * Cross platform, and open source are pure gold.
-> * People are the greatest reason to develop/build for.
 
-## Things I want from my job
-* A team. I want to collaborate.
-* Opportunities to form cohesive work relationships.
-* Patience as I grow.
-* Clear instruction, and visual goals
+## Things I want from my career
+* Collaboration | I don't want to work alone
+* Freedom to flex my mental muscles w/ my work
+* Freedom to have a vision w/ my work
 
 ## Fin.
-If you have any questions, please consider reaching
-out to me via email, sms, or discord (links at top)
-
-----
-My life goal is to build a non-profit outreach
-to teach mathematics and computer programing to youth (though not exclusively youth) in depressed areas. 
-
+Questions/want to reach out? See top for contact info.
+Thanks for reading,
+~Jon
