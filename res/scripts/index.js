@@ -44,7 +44,7 @@ on(document, "mouseup", (evt)=>{
     isDraggingScroll = false;
 });
 
-let contentPointerUpHandler = (evt)=>{
+let scrollNearestPage = (evt)=>{
     let r = rect(content); //Get content element bounds
     //Get the content page percentage we're in, round it to nearest
     let mul = Math.round(
@@ -58,8 +58,20 @@ let contentPointerUpHandler = (evt)=>{
     });
 }
 
-on(content, "touchend", contentPointerUpHandler);
-on(content, "mouseup", contentPointerUpHandler);
+//Window resize adjust with timeout
+let resizeTimeoutId;
+on(window, "resize", ()=>{
+    if (resizeTimeoutId) {
+        clearTimeout(resizeTimeoutId);
+    }
+    resizeTimeoutId = setTimeout(()=>{
+        scrollNearestPage();
+        resizeTimeoutId = undefined;
+    }, 250);
+});
+
+on(content, "touchend", scrollNearestPage);
+on(content, "mouseup", scrollNearestPage);
 
 on(document, "click", (evt)=>{
     //Open links in a new tab by default
@@ -80,7 +92,6 @@ on(window, "resize", (evt)=>{
     }
 });
 
-//let url = "https://www.jonathancrowder.com/res/data/pages.json";
 let url = "res/data/pages.json";
 
 fetch(url).then((response)=>{
