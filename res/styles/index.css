@@ -1,7 +1,7 @@
 body {
     background-color:rgb(17, 17, 17);
     overflow-x:hidden;
-    color:#c68ce4;
+    color:#7cc4c9;
 }
 * {
     -webkit-user-select: none;
@@ -58,7 +58,7 @@ body {
     left: 10%;
     width: 80%;
     height:100vh;
-    background-color: rgb(41, 53, 56);
+    background-color: rgba(12, 12, 12, 0.8);
     overflow:visible;
     overflow-x:scroll;
 }
@@ -144,6 +144,9 @@ body {
     float:left;
     display:block;
     font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    padding-left: 25px;
+    font-size: large;
 }
 
 a {

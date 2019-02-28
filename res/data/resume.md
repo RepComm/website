@@ -1,41 +1,16 @@
 # Jonathan Crowder
-## Contact Info
-- email: `info@jonathancrowder.com` | `rccommandotac@gmail.com`
-- cell: `575 268 5145`
+## Contact & Info
+- email: `dev@jonathancrowder.com`
 - discord: `RepComm (Jon)#4638`
-
-### External info:
 - [pluralsight profile](https://app.pluralsight.com/profile/jonathan-crowder)
 - [github profile](https://github.com/RepComm)
 - [stackoverflow profile](https://stackoverflow.com/users/8112809/jonathan-crowder)
-## Skills
-### Problem solving
-> I enjoy the process of learning what
-> can be done to resolve.
-> 
-> A tough task to tackle is often more fun than the
-> overall project, and many iterations of debugging
-> makes for the best entertainment.
+## What can I do for you?
+- Web and app design
+- Configure and install linux/win OSes
+- Debug and repair computer hardware
+-
 
-### Office Skills
-> * Typing
-> * Organizing
-> * Coding/Debugging
-> * Video Editing
-> * Graphic Manipulation
-> * Database Design
-> * Word Processing
-> * Office Equipment Troubleshooting
-> * Network Troubleshooting
-> * Network setup
-> * Computer troubleshooting and IT related tasks
-
-### JavaScript
-> Most proficient in this language.
-> Huge fan of module systems, ES5/6, node.js,
-> web apis, recyclable code, and object oriented design.
-> 
-> You can see results of pluralsight tests I did [here](https://app.pluralsight.com/profile/jonathan-crowder)
 ### Computer Languages
 > * JavaScript,
 > * Java,

@@ -5,7 +5,7 @@ needs to be able to automatically fetch my github project data
 
 # Projects
 ## Software
-<iframe src="https://repcomm.github.io/colorsync/colorsync.html" class="gitembed"></iframe>
+<iframe src="https://repcomm.github.io/colorwheel/colorsync.html" class="gitembed"></iframe>
 <iframe src="https://repcomm.github.io/hylitejs/example.html" class="gitembed"></iframe>
 
 <iframe src="https://repcomm.github.io/novofont/novofont" class="gitembed"></iframe>

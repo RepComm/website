@@ -1,0 +1,42 @@
+body {
+    background-color:rgb(17, 17, 17);
+    overflow-x:hidden;
+    color:white;
+}
+.no-select {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#dBackgroundImage {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background-image:url("../images/grid.svg");
+    background-repeat:repeat;
+    background-position-y:top;
+    cursor:all-scroll;
+}
+#template-header {
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    width: 80%;
+    height: 25vh;
+    background-color: #293538;
+    text-align:center;
+}
+#template-title {
+    color: #61969f;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2.4em;
+    font-family: Arial;
+    letter-spacing: 0.1em;
+}
