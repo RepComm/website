@@ -3,12 +3,11 @@
 Powered by [wasm-build-server](https://github.com/RepComm/wasm-build-server)
 software.
 
-> The web app frontend is designed for developers to create, manage, and<br />
-> schedule builds for WebAssembly emsdk projects w/o installing emsdk or linux subsystems.
+> A remote build tool that builds WebAssembly projects<br />
+> without you having to install anything more than a text editor!
 
-[Try it out!](http://wasm.jonathancrowder.com)
+> CURRENTLY NOT FULLY FUNCTIONAL, STILL IN BASIC DEVELOPMENT
 
-Essentially I didn't want to install the linux subsystem on my windows laptop,<br />
-and I don't want to switch between my two laptops all of the time.
+[Try it out!](https://wasm.jonathancrowder.com/client)
 
 ----
