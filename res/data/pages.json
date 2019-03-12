@@ -15,6 +15,14 @@
         {
             "name":"links",
             "contenturl":"res/data/links.md"
+        },
+        {
+            "name":"tools",
+            "contenturl":"res/data/tools.md"
+        },
+        {
+            "name":"wasm-build-server",
+            "url":"https://wasm.jonathancrowder.com/client"
         }
     ]
 }

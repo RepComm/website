@@ -43,6 +43,19 @@ How it works:
 * Dodgy hacks are sometimes acceptable and honestly not hacky at all.
 * It's easier to make a font/text renderer than use HTML for live color coding..
 
+## [auviz](https://github.com/RepComm/novofont)
+[Preview](https://repcomm.github.io/auviz/)
+A json/binary vector font format and canvas-powered text element
+for the web.
+How it works:
+* Text is rendered based on string and independent format array
+-- containing font info (basically css)
+* Loads font from file and loops through chars of it's content and
+-- renders them using font info and pre-compiled SVG paths
+### What I've learned:
+* That reinventing the wheel is kinda fun if the wheel is a tank tread
+* Storing render instructions separate from content is better for editing.
+
 ## [NovoFont](https://github.com/RepComm/novofont)
 [Preview](https://repcomm.github.io/novofont/novofont)
 A json/binary vector font format and canvas-powered text element

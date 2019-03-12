@@ -145,6 +145,17 @@ fetch(url).then((response)=>{
                             return;
                         });
                     });
+                } else if (page.url) {
+                    if (page.name && page.name !== "") {
+                        let menuItem = make("span");
+                        menuItem.textContent = page.name;
+                        menuItem.className = "top_menu_button";
+                        let atag = make("a");
+                        atag.style.background = "none";
+                        atag.href = page.url;
+                        atag.appendChild(menuItem);
+                        topMenu.appendChild(atag);
+                    }
                 }
             }
         }
